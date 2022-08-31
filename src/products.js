@@ -217,7 +217,7 @@ export const Products = () => {
                             fontSize: "15px",
                           }}
                         >
-                          {el.price} % Save
+                          {/* {el.price} % Save */}
                         </span>
                         <img
                           src={el.image}
@@ -359,7 +359,7 @@ export const Products = () => {
                                 fontSize: "15px",
                               }}
                             >
-                              {el.price} % Save
+                              {/* {el.price} % Save */}
                             </span>
                             <img
                               src={el.image}
