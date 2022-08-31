@@ -11,6 +11,8 @@ export const TopNav = () => {
   const [cart, setCart, data, setData, cat, setCat, state, setState] =
     React.useContext(Context);
   const [login, setLogin] = React.useState(false);
+  const [logged, setLogged] = React.useState("");
+
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal(e) {
     setIsOpen(true);
@@ -79,37 +81,10 @@ export const TopNav = () => {
           Download Way2doorApp <a href="#">Click here</a>
         </h5>
         <div style={{ display: "flex" }}>
-          <i  onClick={() => {
-              setLocation(true);
-              setIsOpen3(true);
-            }}>
-              <Tooltip
-            title={
-              <span
-                style={{
-                  fontSize: "14px",
-                  backgroundColor: "#",
-                  color: "#fff",
-                  border: "none",
-                }}
-              >
-                Set Location
-              </span>
-            }
-          >
-            <Button
-              key={Math.random()}
-              // onClick={}
-              sx={{ my: 2, color: "white", display: "block", fontSize: "18px" }}
-            >
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-            </Button>
-          </Tooltip></i>
-          
           <i
             onClick={() => {
-              setLogin(true);
-              setIsOpen(true);
+              setLocation(true);
+              setIsOpen3(true);
             }}
           >
             <Tooltip
@@ -122,12 +97,13 @@ export const TopNav = () => {
                     border: "none",
                   }}
                 >
-                  Login
+                  Set Location
                 </span>
               }
             >
               <Button
                 key={Math.random()}
+                // onClick={}
                 sx={{
                   my: 2,
                   color: "white",
@@ -135,36 +111,145 @@ export const TopNav = () => {
                   fontSize: "18px",
                 }}
               >
-                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
               </Button>
             </Tooltip>
           </i>
-          <i onClick={() => {
-              setSignup(true);
-              setIsOpen2(true);
-            }}><Tooltip
-            title={
-              <span
-                style={{
-                  fontSize: "14px",
-                  backgroundColor: "#",
-                  color: "#fff",
-                  border: "none",
+          {logged == "" ? (
+            <>
+              <i
+                onClick={() => {
+                  setLogin(true);
+                  setIsOpen(true);
                 }}
               >
-                Signup
-              </span>
-            }
-          >
-            <Button
-              key={Math.random()}
-              // onClick={}
-              sx={{ my: 2, color: "white", display: "block", fontSize: "18px" }}
-            >
-              <i class="fa-solid fa-paper-plane"></i>
-            </Button>
-          </Tooltip></i>
-          
+                <Tooltip
+                  title={
+                    <span
+                      style={{
+                        fontSize: "14px",
+                        backgroundColor: "#",
+                        color: "#fff",
+                        border: "none",
+                      }}
+                    >
+                      Login
+                    </span>
+                  }
+                >
+                  <Button
+                    key={Math.random()}
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      fontSize: "18px",
+                    }}
+                  >
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                  </Button>
+                </Tooltip>
+              </i>
+              <i
+                onClick={() => {
+                  setSignup(true);
+                  setIsOpen2(true);
+                }}
+              >
+                <Tooltip
+                  title={
+                    <span
+                      style={{
+                        fontSize: "14px",
+                        backgroundColor: "#",
+                        color: "#fff",
+                        border: "none",
+                      }}
+                    >
+                      Signup
+                    </span>
+                  }
+                >
+                  <Button
+                    key={Math.random()}
+                    // onClick={}
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      fontSize: "18px",
+                    }}
+                  >
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </Button>
+                </Tooltip>
+              </i>
+            </>
+          ) : (
+            <>
+              <i onClick={() => {}}>
+                <Tooltip
+                  title={
+                    <span
+                      style={{
+                        fontSize: "14px",
+                        backgroundColor: "#",
+                        color: "#fff",
+                        border: "none",
+                      }}
+                    >
+                      Logged User
+                    </span>
+                  }
+                >
+                  <Button
+                    key={Math.random()}
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      fontSize: "18px",
+                    }}
+                  >
+                    User1{" "}
+                  </Button>
+                </Tooltip>
+              </i>
+              <i
+                onClick={() => {
+                  setLogged("");
+                }}
+              >
+                <Tooltip
+                  title={
+                    <span
+                      style={{
+                        fontSize: "14px",
+                        backgroundColor: "#",
+                        color: "#fff",
+                        border: "none",
+                      }}
+                    >
+                      Logout
+                    </span>
+                  }
+                >
+                  <Button
+                    key={Math.random()}
+                    // onClick={}
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      fontSize: "18px",
+                    }}
+                  >
+                    Logout{" "}
+                  </Button>
+                </Tooltip>
+              </i>
+            </>
+          )}
         </div>
       </div>
       {login === false ? null : (
@@ -212,11 +297,17 @@ export const TopNav = () => {
                     class="login_btn"
                     ng-click="loginWithPassword()"
                     value="Login Now"
-                    onClick={()=>{alert("Logged in Successfully");closeModal()}}
+                    onClick={() => {
+                      alert("Logged in Successfully");
+                      setLogged("User1");
+                      closeModal();
+                    }}
                   />
                 </div>
                 <div class="form-group">
-                 <p><a href="#">Reset your Password here!</a></p>
+                  <p>
+                    <a href="#">Reset your Password here!</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -299,7 +390,9 @@ export const TopNav = () => {
                   />
                 </div>
                 <div class="form-group">
-                 <p><a href="#">Already a user?</a></p>
+                  <p>
+                    <a href="#">Already a user?</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -354,7 +447,6 @@ export const TopNav = () => {
                     style={{ width: "300px" }}
                   />
                 </div>
-                
 
                 <div class="form-group">
                   <input
@@ -365,7 +457,9 @@ export const TopNav = () => {
                   />
                 </div>
                 <div class="form-group">
-                 <p><a href="#"></a></p>
+                  <p>
+                    <a href="#"></a>
+                  </p>
                 </div>
               </div>
             </div>
