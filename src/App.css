@@ -1,0 +1,256 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Appbar {
+  background-color: rgb(252, 185, 62);
+}
+a{
+  color: #9C5DDC;
+  font-size: 15px;
+}
+a:hover{
+  text-decoration: none;
+}
+.topNav{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1%;
+  background-color: #556D0B;
+  color: #fff;
+}
+.topNav a{
+  color: rgb(145, 250, 59);
+}
+.main{
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-evenly;
+margin-top: 1%;
+background-color: #fff;
+border: 1px solid rgb(250, 186, 186);
+
+
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.categories{
+  position: sticky;
+  top:130px;
+  /* left:-0px; */
+  /* background-color: #556D0B; */
+  /* width:26vw; */
+  height:100%;
+  /* padding-top:10%; */
+  /* color :wheat; */
+  text-align: justify;
+  /* border-right: 2px solid black; */
+}
+li h4{
+  text-align: center;
+}
+.products{
+width: 78vw;  
+/* background-color: #61dafb; */
+/* margin-left: 15%; */
+/* border-top: 2px solid black;
+border-left: 2px solid black; */
+border-left: 1px solid rgb(250, 186, 186);
+padding-bottom: 5px;
+
+
+}
+.categories li{
+  width: 100%; 
+  /* background-color: #fff;  */
+  padding: 6%;
+  /* padding-left: 0; */
+  border: 1px solid rgb(250, 186, 186);
+  border-right: none;
+  border-top: none;
+
+ 
+  }
+ .categories li a{
+    text-decoration: none;
+    color: #282c34;
+
+  }
+  li a:hover{
+    text-decoration: none;
+    color: #6A8A0A;
+
+  }
+  #top{
+    position: fixed;
+    right: 0;
+    /* bottom: 50px; */
+  color: #6A8A0A;
+    width: 45px;
+    font-size: 39px;
+    border: none;
+    background: transparent;
+  }
+  #contact{
+    display:none;
+    position: fixed;
+    left: 0;
+    top:-570px;
+  color: #6A8A0A;
+    width: 45px;
+    font-size: 39px;
+    border: none;
+    background: transparent;
+    /* padding:2%;
+  padding-left: 1%;  } */
+  }
+ 
+  .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+  }
+ 
+
+  .displayImg{
+    /* max-width: 700px; */
+    width:100%;  }
+
+    .container{
+      position: relative;
+    }
+    .active{
+      color:#6A8A0A
+    }
+#Cards{
+  display: flex;
+flex-wrap: wrap;
+justify-content: center;
+text-align: justify;
+/* font-size: 1vw; */
+padding-left: 11.1%;
+}
+#Card{
+  width:300px;
+  /* padding-left: 80px; */
+  /* text-align: center; */
+}
+.top_footer_box_img{
+  margin-right: 0;
+  float: none;
+  
+  
+}
+body{
+  background-color: #fff;
+}
+.btn1{
+  background-color: #f70a0a;
+  color:#fff ;
+}
+.btn2{
+  background-color: #6A8A0A;
+  color:#fff ;
+}
+select{
+  /* position:sticky;
+  top:200px; */
+  margin: 25px;
+  width: fit-content;
+        height: 30px;
+        /* border: 1px solid #999; */
+        border: none;
+        font-size: 18px;
+        color: #095202;
+        background-color: #eee;
+        border-radius: 5px;
+        box-shadow: 4px 4px #ccc;
+}
+input{
+  /* position:sticky;
+  top:200px; */
+  margin: 25px;
+  width: fit-content;
+        height: 30px;
+        border: 1px solid #999;
+        border: none;
+        font-size: 18px;
+        color: #095202;
+        background-color: #eee;
+        border-radius: 5px;
+        box-shadow: 4px 4px #ccc;
+}
+::placeholder{
+  color: #095202;
+
+}
+.modalImg{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 2%;
+}
+.cart{
+  /* max-width: 70%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap; */
+  width: 350px;
+  font-family: 'Amaranth', sans-serif;
+}
+.cartItem{
+  margin-left: 2%;
+  margin-top :2%;
+  width: 300px;
+ border-bottom: 1px solid #004D40;
+
+}
+#review{
+  margin-top: 10px;
+  width: 43%,
+}
+@media only screen and (max-width: 400px) {
+  #review {
+   width: 100%;
+  
+}
+}
